@@ -7,8 +7,8 @@ import io.latent.storm.rabbitmq.config.ProducerConfig;
 import io.latent.storm.rabbitmq.config.ProducerConfigBuilder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.storm.Config;
-import org.apache.storm.tuple.Tuple;
+import backtype.storm.Config;
+import backtype.storm.tuple.Tuple;
 
 import java.util.HashMap;
 import java.util.Map;

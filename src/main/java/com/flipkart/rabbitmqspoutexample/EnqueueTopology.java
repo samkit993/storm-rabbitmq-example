@@ -4,9 +4,9 @@ import io.latent.storm.rabbitmq.RabbitMQBolt;
 import io.latent.storm.rabbitmq.config.ConnectionConfig;
 import io.latent.storm.rabbitmq.config.ProducerConfig;
 import io.latent.storm.rabbitmq.config.ProducerConfigBuilder;
-import org.apache.storm.LocalCluster;
-import org.apache.storm.generated.StormTopology;
-import org.apache.storm.topology.TopologyBuilder;
+import backtype.storm.LocalCluster;
+import backtype.storm.generated.StormTopology;
+import backtype.storm.topology.TopologyBuilder;
 
 /**
  * Created by samkit.shah on 31/07/17.

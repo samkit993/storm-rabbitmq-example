@@ -5,14 +5,13 @@ import io.latent.storm.rabbitmq.RabbitMQSpout;
 import io.latent.storm.rabbitmq.config.ConnectionConfig;
 import io.latent.storm.rabbitmq.config.ConsumerConfig;
 import io.latent.storm.rabbitmq.config.ConsumerConfigBuilder;
-import org.apache.storm.LocalCluster;
-import org.apache.storm.generated.StormTopology;
-import org.apache.storm.spout.Scheme;
-import org.apache.storm.topology.TopologyBuilder;
-import org.apache.storm.tuple.Fields;
-import org.apache.storm.tuple.Values;
+import backtype.storm.LocalCluster;
+import backtype.storm.generated.StormTopology;
+import backtype.storm.spout.Scheme;
+import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.tuple.Fields;
+import backtype.storm.tuple.Values;
 
-import java.nio.ByteBuffer;
 import java.util.List;
 
 public class DequeueTopology {
@@ -23,8 +22,8 @@ public class DequeueTopology {
         TopologyBuilder topologyBuilder = new TopologyBuilder();
         Scheme scheme = new Scheme() {
             @Override
-            public List<Object> deserialize(ByteBuffer byteBuffer) {
-                String jsonStr = new String(byteBuffer.array());
+            public List<Object> deserialize(byte[] bytes) {
+                String jsonStr = new String(bytes);
                 ContentMetadata contentMetadata = null;
                 try {
                     contentMetadata = objectMapper.readValue(jsonStr, ContentMetadata.class);
